@@ -17,7 +17,7 @@
             url : posturl,
             success: function(resp, status) {
                          document.getElementById("postservertime").value = resp["body"];
-                         document.getElementById("output").value = resp["body"].get("output");
+                         document.getElementById("output").value = JSON.parse(resp["body"])["output"];
                          document.getElementById("nowtime").value = resp["body"]["timestamp"];
             },
             error: function(XMLHttpRequest, textStatus, errorThrown) {
