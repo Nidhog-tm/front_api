@@ -7,9 +7,6 @@
 <script type="text/javascript">
       function startpost() {
 
-        // postservertime = document.getElementById("postservertime").value;
-        // timezone = document.getElementById("timezone").value;
-
         posturl = "https://m9gfhlxkj9.execute-api.ap-northeast-1.amazonaws.com/Prod/";
 
         var jsondata = {};
@@ -20,6 +17,8 @@
             url : posturl,
             success: function(resp, status) {
                          document.getElementById("postservertime").value = resp["body"];
+                         document.getElementById("output").value = resp["body"]["output"];
+                         document.getElementById("nowtime").value = resp["body"]["timestamp"];
             },
             error: function(XMLHttpRequest, textStatus, errorThrown) {
                        document.getElementById("postservertime").value = 
@@ -32,14 +31,16 @@
 </script>
 </head>
 <body>
-<form id="form" action="">
-<button type="button" id="btn-post" onclick="startpost()">Post</button>
-氏名<input type="text" name="username"><br />
-メールアドレス<input type="text" name="email"><br />
-</form>
-<div id="message"></div>
 <div>
+	Lambda レスポンス<br>
 	<textarea id="postservertime" cols="30" rows="5"></textarea>
 </div>
+<div>
+	Output : <textarea id="output" cols="30" rows="1"></textarea>
+</div>
+<div>
+	nowtime : <textarea id="nowtime" cols="30" rows="1"></textarea>
+</div>
+
 </body>
 </html>
