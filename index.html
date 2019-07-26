@@ -1,6 +1,20 @@
-<html>
-	<head></head>
-	<body>
-		Hello!
-	</body>
+<!DOCTYPEhtml>
+<html lang="ja">
+    <head>
+        <meta charset="UTF-8">
+            <title>TEST</title>
+    </head>
+    
+    <body>
+        <header>
+            <h1>API GateWay test</h1>
+        </header>
+        <p>Slack post api</p>
+        <article>
+            <form action="https://m9gfhlxkj9.execute-api.ap-northeast-1.amazonaws.com/Prod/" method="post" accept-charset="utf-8">
+                <input type="text" name="message" placeholder="文字を入力"/>
+                <input type="submit" value="送信">
+            </form>
+        </article>
+    </body>
 </html>

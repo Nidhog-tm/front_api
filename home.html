@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="utf-8">
+<title>jqueryのajaxのサンプル</title>
+<script type="text/javascript" src="jquery-3.4.1.min.js"></script>
+<script type="text/javascript">
+$( function() {
+
+    var apiUrl = 'https://m9gfhlxkj9.execute-api.ap-northeast-1.amazonaws.com/Prod/';
+
+    $('#button').click(
+        function(){
+            var formData = $("#form").serialize();
+            console.log("formData:" + formData);
+            $.ajax({
+                url:apiUrl, // 通信先のURL
+                type:'POST',// 使用するHTTPメソッド (GET/ POST)
+                // data:formData, // 送信するデータ
+                dataType:'json', // 応答のデータの種類 (xml/html/script/json/jsonp/text)
+                contentType: "application/json",
+                // 通信に成功した時に実行される
+                }).done(function(response,textStatus,jqXHR) {
+                    console.log("成功:" + jqXHR.status);
+
+                    if (response.completed == 1)
+                    {
+                        $('#message').html('登録を完了しました。');
+                        console.log(response.data.email);
+                    }
+                    else if(response.completed == 0)
+                    {
+                        $('#message').html('サーバーの内部エラーのため登録が失敗しました。');
+                    }
+
+                 // 通信に失敗した時に実行される
+                }).fail(function(jqXHR, textStatus, errorThrown) {
+                    alert("失敗:" + jqXHR.status);
+                    console.log("失敗:" + jqXHR.status);
+                });
+        });
+});
+</script>
+</head>
+<body>
+<form id="form" action="">
+<input type="button" id="button" value="開始ボタン"><br/>
+氏名<input type="text" name="username"><br />
+メールアドレス<input type="text" name="email"><br />
+</form>
+<div id="message"></div>
+</body>
+</html>
