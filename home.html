@@ -7,7 +7,7 @@
 <script type="text/javascript">
 $( function() {
 
-    var apiUrl = 'https://m9gfhlxkj9.execute-api.ap-northeast-1.amazonaws.com/Prod';
+    var apiUrl = 'https://m9gfhlxkj9.execute-api.ap-northeast-1.amazonaws.com/Prod/';
 
     $('#button').click(
         function(){
@@ -18,7 +18,7 @@ $( function() {
                 type:'POST',// 使用するHTTPメソッド (GET/ POST)
                 // data:formData, // 送信するデータ
                 dataType:'json', // 応答のデータの種類 (xml/html/script/json/jsonp/text)
-                contentType: "application/json",
+                // contentType: "application/json",
                 // 通信に成功した時に実行される
                 }).done(function(response,textStatus,jqXHR) {
                     console.log("成功:" + jqXHR.status);
