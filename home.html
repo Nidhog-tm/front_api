@@ -55,7 +55,6 @@ $( function() {
             url : posturl,
             success: function(resp, status) {
                          document.getElementById("postservertime").value = resp["body"];
-                         $('#message').html(resp["body"]);
             },
             error: function(XMLHttpRequest, textStatus, errorThrown) {
                        document.getElementById("postservertime").value = 
