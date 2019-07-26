@@ -37,6 +37,8 @@ $( function() {
                 }).fail(function(jqXHR, textStatus, errorThrown) {
                     alert("失敗:" + jqXHR.status);
                     alert(jqXHR);
+                    alert(textStatus);
+                    alert(errorThrown);
                     console.log("失敗:" + jqXHR.status);
                 });
         });
