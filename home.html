@@ -7,7 +7,7 @@
 <script type="text/javascript">
 $( function() {
 
-    var apiUrl = 'https://m9gfhlxkj9.execute-api.ap-northeast-1.amazonaws.com/Prod/';
+    var apiUrl = 'https://m9gfhlxkj9.execute-api.ap-northeast-1.amazonaws.com/Prod';
 
     $('#button').click(
         function(){
@@ -36,9 +36,6 @@ $( function() {
                  // 通信に失敗した時に実行される
                 }).fail(function(jqXHR, textStatus, errorThrown) {
                     alert("失敗:" + jqXHR.status);
-                    alert(jqXHR);
-                    alert(textStatus);
-                    alert(errorThrown);
                     console.log("失敗:" + jqXHR.status);
                 });
         });
