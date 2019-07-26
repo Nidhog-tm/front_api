@@ -9,7 +9,7 @@ $( function() {
 
     var apiUrl = 'https://m9gfhlxkj9.execute-api.ap-northeast-1.amazonaws.com/Prod/';
 
-    $('#button').click(
+    $('#button234').click(
         function(){
             var formData = $("#form").serialize();
             console.log("formData:" + formData);
@@ -40,14 +40,42 @@ $( function() {
                 });
         });
 });
+      function startpost() {
+
+        postservertime = document.getElementById("postservertime").value;
+        timezone = document.getElementById("timezone").value;
+
+        posturl = "https://8o8hczxqee.execute-api.ap-northeast-1.amazonaws.com/dev/sample";
+
+        var jsondata = {"postservertime" : postservertime, "timezone" : timezone};
+        $.ajax({
+            dataType : "json",
+            data : JSON.stringify(jsondata),
+            type : "POST",
+            url : posturl,
+            success: function(resp, status) {
+                         document.getElementById("postservertime").value = resp["body"];
+                         $('#message').html(resp["body"]);
+            },
+            error: function(XMLHttpRequest, textStatus, errorThrown) {
+                       document.getElementById("postservertime").value = 
+                           "XMLHttpRequest: " + XMLHttpRequest.status + 
+                           "\r\ntextStatus: " + textStatus + 
+                           "\r\nerrorThrown: " + errorThrown.message;
+            }
+        });
+      }
 </script>
 </head>
 <body>
 <form id="form" action="">
-<input type="button" id="button" value="開始ボタン"><br/>
+<button type="button" id="btn-post" onclick="startpost()">Post</button>
 氏名<input type="text" name="username"><br />
 メールアドレス<input type="text" name="email"><br />
 </form>
 <div id="message"></div>
+<div>
+	<textarea id="postservertime" cols="30" rows="5"></textarea>
+</div>
 </body>
 </html>
