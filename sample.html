@@ -29,8 +29,8 @@
         postservertime = document.getElementById("postservertime").value;
         timezone = document.getElementById("timezone").value;
 
-        posturl = "https://8o8hczxqee.execute-api.ap-northeast-1.amazonaws.com/dev/sample";
-
+        //posturl = "https://8o8hczxqee.execute-api.ap-northeast-1.amazonaws.com/dev/sample";
+        posturl = "https://m9gfhlxkj9.execute-api.ap-northeast-1.amazonaws.com/Prod/"
         var jsondata = {"postservertime" : postservertime, "timezone" : timezone};
         $.ajax({
             dataType : "json",
