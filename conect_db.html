@@ -26,6 +26,17 @@
                            "\r\nerrorThrown: " + errorThrown.message;
             }
         });
+	$(function(result){
+		for(var i in result){
+		  var h = '<dt>'
+			+ result[i].test_id
+			+ '</dt>'
+			+ '<dd>'
+			+ result[i].name
+			+ '</dd>';
+		  $("dl#wrap").append(h);
+		}
+	 });
       }
 </script>
 </head>
@@ -38,17 +49,7 @@
 		<div>
 			<dl id="wrap">
 			  <script type="text/javascript">
-			    $(function(result){
-				for(var i in result){
-				  var h = '<dt>'
-					+ result[i].test_id
-					+ '</dt>'
-					+ '<dd>'
-					+ result[i].name
-					+ '</dd>';
-				  $("dl#wrap").append(h);
-				}
-			      });
+			    
 			  </script>
 			</dl>
 		</div>
