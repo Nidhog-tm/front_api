@@ -17,17 +17,17 @@
             url : posturl,
             success: function(resp, status) {
                         document.getElementById("postservertime").value = resp["body"];
-		        var result = JSON.parse(resp["body"])["result"];
-		    	
-			for(var i in result){
-			  var h = '<dt>'
-				+ result[i].test_id
-				+ '</dt>'
-				+ '<dd>'
-				+ result[i].name
-				+ '</dd>';
-			  $("dl#wrap").append(h);
-			}
+                        var result = JSON.parse(resp["body"])["result"];
+
+                        for(var i in result){
+                            var h = '<dt>'
+	                    + result[i].test_id
+	                    + '</dt>'
+	                    + '<dt>'
+	                    + result[i].name
+	                    + '</dt>';
+                            $("dl#wrap").append(h);
+                        }
             },
             error: function(XMLHttpRequest, textStatus, errorThrown) {
                        document.getElementById("postservertime").value = 
@@ -47,9 +47,6 @@
 		</div>
 		<div>
 			<dl id="wrap">
-			  <script type="text/javascript">
-			    
-			  </script>
 			</dl>
 		</div>
 	</body>
