@@ -18,14 +18,14 @@
             success: function(resp, status) {
                         document.getElementById("postservertime").value = resp["body"];
                         var result = JSON.parse(resp["body"])["result"];
-
+                        var h;
                         for(var i in result){
-                            var h = '<dt>'
-	                    + result[i].test_id
-	                    + '</dt>'
-	                    + '<dt>'
-	                    + result[i].name
-	                    + '</dt>';
+                            h = '<dt>'
+                            + result[i].test_id
+                            + '</dt>'
+                            + '<dd>'
+                            + result[i].name
+                            + '</dd>';
                             $("dl#wrap").append(h);
                         }
             },
