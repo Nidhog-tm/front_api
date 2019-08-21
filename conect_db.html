@@ -17,8 +17,7 @@
             url : posturl,
             success: function(resp, status) {
                          document.getElementById("postservertime").value = resp["body"];
-                         document.getElementById("output").value = JSON.parse(resp["body"])["output"];
-                         document.getElementById("nowtime").value = JSON.parse(resp["body"])["timestamp"];
+		         var result = JSON.parse(resp["body"])["result"];
             },
             error: function(XMLHttpRequest, textStatus, errorThrown) {
                        document.getElementById("postservertime").value = 
@@ -30,18 +29,28 @@
       }
 </script>
 </head>
-<body>
-<button type="button" id="btn-post" onclick="startpost()">Post</button>
-<div>
-	Lambda レスポンス<br>
-	<textarea id="postservertime" cols="30" rows="5"></textarea>
-</div>
-<div>
-	Output : <textarea id="output" cols="30" rows="1"></textarea>
-</div>
-<div>
-	nowtime : <textarea id="nowtime" cols="30" rows="1"></textarea>
-</div>
-
-</body>
+	<body>
+		<button type="button" id="btn-post" onclick="startpost()">Post</button>
+		<div>
+			Lambda レスポンス<br>
+			<textarea id="postservertime" cols="30" rows="5"></textarea>
+		</div>
+		<div>
+			<dl id="wrap">
+			  <script type="text/javascript">
+			    $(function(result){
+				for(var i in result){
+				  var h = '<dt>'
+					+ result[i].test_id
+					+ '</dt>'
+					+ '<dd>'
+					+ result[i].name
+					+ '</dd>';
+				  $("dl#wrap").append(h);
+				}
+			      });
+			  </script>
+			</dl>
+		</div>
+	</body>
 </html>
