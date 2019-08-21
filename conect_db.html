@@ -18,6 +18,7 @@
             success: function(resp, status) {
                         document.getElementById("postservertime").value = resp["body"];
                         var result = JSON.parse(resp["body"])["result"];
+                        $("dl#wrap").empty();
                         var h;
                         for(var i in result){
                             h = '<dt>'
