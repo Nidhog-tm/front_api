@@ -19,17 +19,15 @@
                         document.getElementById("postservertime").value = resp["body"];
 		        var result = JSON.parse(resp["body"])["result"];
 		    	
-			$(function(result){
-				for(var i in result){
-				  var h = '<dt>'
-					+ result[i].test_id
-					+ '</dt>'
-					+ '<dd>'
-					+ result[i].name
-					+ '</dd>';
-				  $("dl#wrap").append(h);
-				}
-			 });
+			for(var i in result){
+			  var h = '<dt>'
+				+ result[i].test_id
+				+ '</dt>'
+				+ '<dd>'
+				+ result[i].name
+				+ '</dd>';
+			  $("dl#wrap").append(h);
+			}
             },
             error: function(XMLHttpRequest, textStatus, errorThrown) {
                        document.getElementById("postservertime").value = 
