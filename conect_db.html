@@ -16,8 +16,20 @@
             type : "POST",
             url : posturl,
             success: function(resp, status) {
-                         document.getElementById("postservertime").value = resp["body"];
-		         var result = JSON.parse(resp["body"])["result"];
+                        document.getElementById("postservertime").value = resp["body"];
+		        var result = JSON.parse(resp["body"])["result"];
+		    	
+			$(function(result){
+				for(var i in result){
+				  var h = '<dt>'
+					+ result[i].test_id
+					+ '</dt>'
+					+ '<dd>'
+					+ result[i].name
+					+ '</dd>';
+				  $("dl#wrap").append(h);
+				}
+			 });
             },
             error: function(XMLHttpRequest, textStatus, errorThrown) {
                        document.getElementById("postservertime").value = 
@@ -26,17 +38,6 @@
                            "\r\nerrorThrown: " + errorThrown.message;
             }
         });
-	$(function(result){
-		for(var i in result){
-		  var h = '<dt>'
-			+ result[i].test_id
-			+ '</dt>'
-			+ '<dd>'
-			+ result[i].name
-			+ '</dd>';
-		  $("dl#wrap").append(h);
-		}
-	 });
       }
 </script>
 </head>
