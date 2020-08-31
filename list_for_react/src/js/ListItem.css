@@ -8,7 +8,7 @@
     padding: 4px 2px;
   }
   
-.ListItem-title {
+.ListItem-testID {
   font-size: 18px;
   margin: 0 8px 4px;
   border-bottom: 1px solid #333;
@@ -16,7 +16,7 @@
   padding: 4px 8px;
 }
 
-.ListItem-description {
+.ListItem-name {
   word-wrap: break-word;
   padding: 8px;
 }

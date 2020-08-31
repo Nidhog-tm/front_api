@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-// import './ListItem.css';
+import './ListItem.css';
 
 class ListItem extends Component {
   render() {
@@ -9,9 +9,9 @@ class ListItem extends Component {
     } = this.props;
 
     return (
-      <div >
-        <div >{test_id}</div>
-        <div >{name}</div>
+      <div className="ListItem">
+        <div className="ListItem-testID">{test_id}</div>
+        <div className="ListItem-name">{name}</div>
       </div>
     );
   }

@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import ReactDOM from 'react-dom';
 import axios from 'axios';
-// import './app.css';
+import './app.css';
 import ListItem from "./ListItem.js"
 
 const API_BASE_URL = 'https://z5xuipvtuk.execute-api.ap-northeast-1.amazonaws.com/Prod/getlist';
@@ -37,7 +37,7 @@ class App extends Component {
     }
     render() {
         return (
-            <div>
+            <div className="App">
                 {/* {this.state.test_id} */}
                 {/* list 配列の要素数分 ListItem コンポーネントを展開 */}
                 {this.state.list.map(list => (

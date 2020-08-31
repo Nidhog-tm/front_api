@@ -1,3 +1,26 @@
+# react build 設定
+
+## webpack インストール 
+
+```bash
+npm install --save-dev webpack
+```
+
+## build パッケージインストール
+
+```bash
+npm install --save-dev @babel/core @babel/preset-env @babel/preset-react @babel/polyfill
+```
+
+## CSS loader インストール
+
+```bash
+npm i -D style-loader css-loader
+```
+
+## webpack.config.js 設定内容
+
+```js
 module.exports = {
     mode: 'development',
     entry: [
@@ -32,3 +55,4 @@ module.exports = {
     ]
     }
 };
+```
