@@ -21,17 +21,15 @@ class App extends Component {
     }
     async getDataFromApi() {
         // APIをコール
-        await axios.post(API_BASE_URL,{})
+        await axios.get(API_BASE_URL)
             .then((response) => {
                 // log 
-                console.log(response.data.body);
-                // console.log(JSON.parse(response.data.body).result);
+                console.log(JSON.parse(response.data.body.body).result);
 
                 // APIから取得したデータをstateに保存
                 this.setState({
-                    list: JSON.parse(response.data.body).result
+                    list: JSON.parse(response.data.body.body).result
                 });
-                //console.log(JSON.parse(this.state.test_id));
                 console.log(this.state.list);
             })
     }
