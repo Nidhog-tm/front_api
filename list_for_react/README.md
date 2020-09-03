@@ -1,24 +1,34 @@
-# react build 設定
+# react 設定
 
-## webpack インストール 
+## reactをインストール
+
+npm install react react-dom
+
+## APIと連携するためにaxiosもインストール
+
+npm install axios
+
+## react build 設定
+
+### webpack インストール
 
 ```bash
 npm install --save-dev webpack
 ```
 
-## build パッケージインストール
+### build パッケージインストール
 
 ```bash
 npm install --save-dev @babel/core @babel/preset-env @babel/preset-react @babel/polyfill
 ```
 
-## CSS loader インストール
+### CSS loader インストール
 
 ```bash
 npm i -D style-loader css-loader
 ```
 
-## webpack.config.js 設定内容
+### webpack.config.js 設定内容
 
 ```js
 module.exports = {
