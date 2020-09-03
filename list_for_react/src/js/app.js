@@ -4,7 +4,7 @@ import axios from 'axios';
 import './app.css';
 import ListItem from "./ListItem.js"
 
-const API_BASE_URL = 'https://z5xuipvtuk.execute-api.ap-northeast-1.amazonaws.com/Prod/getlist';
+const API_BASE_URL = 'https://mdntueu7u8.execute-api.ap-northeast-1.amazonaws.com/Prod/getlist';
 
 class App extends Component {
     constructor(props) {
