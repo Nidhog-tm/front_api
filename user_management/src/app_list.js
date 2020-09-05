@@ -1,7 +1,7 @@
 import React from "react";
 import axios from 'axios';
 
-import './app.css';
+import './app_list.css';
 import ListItem from "./ListItem.js"
 import Footer from "./footer.jsx";
 import Header from "./header.jsx";

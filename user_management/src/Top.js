@@ -13,11 +13,11 @@ class Top extends React.Component {
     render() {
     return (
         <div>
-            <div className="main">
+            <div className="main" style={{textAlign: "center"}}>
             <h1>ログイン</h1>
             <form onSubmit={this.handleSubmit}>
-                <input placeholder="userid"/>
-                <input placeholder="password"/>
+                <input placeholder="userid"/><br/><br/>
+                <input placeholder="password"/><br/><br/>
                 <div style={{textAlign:"cener"}}>
                 <button onClick={this.handleClick}>ログイン</button>
                 </div>

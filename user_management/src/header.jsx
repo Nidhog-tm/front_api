@@ -17,7 +17,7 @@ class Header extends React.Component{
       <header>
          <div style={{position:"relative", textAlign:"right", paddingTop: "30px"}}>
            <Link to="/main" style={{paddingRight: "5px"}}>メニュー</Link>
-           <Link to="/app" style={{paddingRight: "5px"}}>ユーザーリスト</Link>
+           <Link to="/list" style={{paddingRight: "5px"}}>ユーザーリスト</Link>
            <button onClick={this.handleClick}>ログアウト</button>
          </div>
          <hr/>
