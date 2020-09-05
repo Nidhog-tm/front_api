@@ -1,10 +1,10 @@
 import React from "react";
 import axios from 'axios';
 
-import './app_list.css';
+import './App_list.css';
 import ListItem from "./ListItem.js"
-import Footer from "./footer.jsx";
-import Header from "./header.jsx";
+import Footer from "./Footer.js";
+import Header from "./Header.js";
 
 const API_BASE_URL = 'https://mdntueu7u8.execute-api.ap-northeast-1.amazonaws.com/Prod/getlist';
 

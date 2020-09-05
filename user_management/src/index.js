@@ -6,7 +6,7 @@ import './index.css';
 import Layout from "./Layout";
 import Top from "./Top";
 import Main from "./Main";
-import App_list from './app_list';
+import App_list from './App_list';
 import * as serviceWorker from './serviceWorker';
 
 ReactDOM.render(

@@ -1,7 +1,7 @@
 import React from "react";
 
-import Footer from "./footer.jsx";
-import Header from "./header.jsx";
+import Footer from "./Footer.js";
+import Header from "./Header.js";
 
 export default class Main extends React.Component {
   render() {
